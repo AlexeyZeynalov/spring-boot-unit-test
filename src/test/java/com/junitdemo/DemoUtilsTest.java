@@ -9,6 +9,16 @@ public class DemoUtilsTest {
 
     DemoUtils demoUtils;
 
+    @BeforeAll
+    static void setupBeforeEachClass() {
+        System.out.println("@BeforeAll executes only before all test methods execution in the class" + "\n");
+    }
+
+    @AfterAll
+    static void tearDownAfterAll() {
+        System.out.println("@AfterAll executes only once after all test methods execution in the class");
+    }
+
     @BeforeEach
     void setupBeforeEach() {
         demoUtils = new DemoUtils();
