@@ -8,6 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -34,6 +35,7 @@ public class DemoUtilsTest {
     }
 
     @Test
+    @Order(1)
     void testEqualsAndNotEquals() {
 
         System.out.println("Running test: testEqualsAndNotEquals");
@@ -43,6 +45,7 @@ public class DemoUtilsTest {
     }
 
     @Test
+    @Order(0 )
     void testNullAndNotNull() {
 
         System.out.println("Running test: testNullAndNotNull");
@@ -64,6 +67,7 @@ public class DemoUtilsTest {
     }
 
     @Test
+    @Order(2)
     void testTrueFalse() {
         int gradeOne = 10;
         int gradeTwo = 5;
@@ -80,6 +84,7 @@ public class DemoUtilsTest {
     }
 
     @Test
+    @Order(3)
     void testIterableEquals() {
         List<String> theList = List.of("rep", "belarus");
 
