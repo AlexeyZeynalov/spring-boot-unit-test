@@ -2,6 +2,8 @@ package com.junitdemo;
 
 import org.junit.jupiter.api.*;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -67,5 +69,26 @@ public class DemoUtilsTest {
 
         assertTrue(demoUtils.isGreater(gradeOne, gradeTwo), "This should return true");
         assertFalse(demoUtils.isGreater(gradeTwo, gradeOne), "This should return false");
+    }
+
+    @Test
+    void testArrayEquals() {
+        String[] stringArray = {"A", "B", "C"};
+
+        assertArrayEquals(stringArray, demoUtils.getFirstThreeLettersOfAlphabet(), "Arrays should be the same");
+    }
+
+    @Test
+    void testIterableEquals() {
+        List<String> theList = List.of("rep", "belarus");
+
+        assertIterableEquals(theList, demoUtils.getAcademyInList(), "Expected list should be same as actual list");
+    }
+
+    @Test
+    void testLinesMatch() {
+        List<String> theList = List.of("rep", "belarus");
+
+        assertLinesMatch(theList, demoUtils.getAcademyInList(), "Lines should match");
     }
 }
