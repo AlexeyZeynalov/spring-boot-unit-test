@@ -50,13 +50,25 @@ class ConditionalTest {
 
     @Test
     @EnabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_17)
-    void testForOnlyForJavaRange () {
+    void testForOnlyForJavaRange() {
 
     }
 
     @Test
     @EnabledForJreRange(min = JRE.JAVA_11)
-    void testForOnlyForJavaRangeMin () {
+    void testForOnlyForJavaRangeMin() {
+
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "TESTING_ENV", matches = "DEV")
+    void testOnlyForDevEnvironment() {
+
+    }
+
+    @Test
+    @EnabledIfSystemProperty(named = "TESTING_SYS_PROP", matches = "CI_CD_DEPLOY")
+    void testOnlyForSystemProperty() {
 
     }
 
